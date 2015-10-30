@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+    <div ui-view></div>
+    <div>
+        <div ng-repeat="user in vm.user_list" class="row">
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5"></div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">{{user.first_name}} {{user.last_name}}</div>
+                <!-- action buttons -->
+                <a class="btn btn-sm btn-default" title="{{'btm.edit'|translate}}" ui-sref="user.detail({userId: $parent.item.id})"><i class="icon fa fa-pencil fa-lg"></i></a>
+
+                <a class="btn btn-sm btn-danger" title="{{'btm.trash'|translate}}" ng-click="vm.deleteItem($parent.item)"><i class="icon fa fa-trash-o fa-lg"></i></a>
+            </div>
+         </div>
+    </div>
+</div>
